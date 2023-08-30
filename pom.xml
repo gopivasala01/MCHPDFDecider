@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>MCHPDFDecider1</groupId>
+    <artifactId>MCHPDFDecider1</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>MCHPDFDecider</name>
+    <description>MCHPDFDecider</description>
+
+    <dependencies>
+    <!-- Selenium WebDriver and Related -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.webdriver</groupId>
+        <artifactId>webdriver-parent</artifactId>
+        <version>0.9.7376</version>
+        <type>pom</type>
+    </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.4.0</version>
+    </dependency>
+
+    <!-- Apache POI for Working with Office Files -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>4.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>4.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-scratchpad</artifactId>
+        <version>4.1.0</version>
+    </dependency>
+
+    <!-- Email Handling with JavaMail -->
+    <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>mail</artifactId>
+        <version>1.4</version>
+    </dependency>
+
+    <!-- Apache XMLBeans for XML Handling -->
+    <dependency>
+        <groupId>org.apache.xmlbeans</groupId>
+        <artifactId>xmlbeans</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+
+    <!-- Google Guava Utility Library -->
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>31.1-jre</version>
+    </dependency>
+
+    <!-- Apache PDFBox for Working with PDFs -->
+    <dependency>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>pdfbox</artifactId>
+        <version>2.0.26</version>
+    </dependency>
+
+    <!-- Microsoft SQL Server JDBC Driver -->
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>11.2.1.jre8</version>
+    </dependency>
+</dependencies>
+</project>
+
