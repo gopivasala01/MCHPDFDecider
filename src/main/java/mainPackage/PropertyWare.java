@@ -101,6 +101,7 @@ public class PropertyWare {
             if (permissionDeniedPage() == true) {
                 System.out.println("Wrong Unit Entity ID");
                 RunnerClass.failedReason = "Wrong Unit Entity ID";
+                RunnerClass.updateStatus = 1;
                 return false;
             }
             
@@ -113,6 +114,8 @@ public class PropertyWare {
             
         } catch (Exception e) {
             RunnerClass.failedReason = "Building not found";
+            System.out.println("Building not found");
+            RunnerClass.updateStatus = 1;
             return false;
         }
     }
@@ -145,6 +148,7 @@ public class PropertyWare {
 
             if (!leaseAvailibilityCheck) {
                 RunnerClass.failedReason = "Lease not Found";
+                RunnerClass.updateStatus = 1;
                 return false;
             }
 
