@@ -23,8 +23,7 @@ public class AppConfig
 		   
 		   public static String mailSubject = "Lease PDF Decider";
 		   
-		   public static String pendingLeasesQuery =" SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%'";
-		   	
+		   public static String pendingLeasesQuery =" SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and (Status is null or Status ='Failed')";		   	
 		   public static String formatQuery =" SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation,AutomationStatus,PdfFormat FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%'";
 		   
 
