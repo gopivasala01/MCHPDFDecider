@@ -38,9 +38,11 @@ public class PDFReader {
     public static boolean readPDFPerMarket(String market) {
         try {
             String pdfFormatType = decidePDFFormat();
-            System.out.println("PDF Format Type = " + pdfFormatType);
+            
 
-            if (pdfFormatType.equals("Format1") || pdfFormatType.equals("Format2")) {
+            if (pdfFormatType.equals("Format1") || pdfFormatType.equals("Format2")) 
+            {
+            	System.out.println("PDF Format Type = " + pdfFormatType);
                 return extractPDFData();
             } else {
                 RunnerClass.failedReason = RunnerClass.failedReason + ", Wrong PDF Format";
@@ -66,13 +68,17 @@ public class PDFReader {
                 String text = new PDFTextStripper().getText(document);
                 text = cleanText(text);
 
-                if (text.contains(format1Text)) {
+                if (text.contains(format1Text)) 
+                {
                     System.out.println("PDF Format Type = " + format1Text);
                     return "Format1";
-                } else if (text.contains(format2Text)) {
+                } 
+                else if (text.contains(format2Text)) 
+                {
                     System.out.println("PDF Format Type = " + format2Text);
                     return "Format2";
-                } else {
+                } else 
+                {
                     return "Error";
                 }
             }

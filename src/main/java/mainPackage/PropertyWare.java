@@ -30,7 +30,8 @@ public class PropertyWare {
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", prefs);
             options.addArguments("--remote-allow-origins=*");
-            WebDriverManager.chromedriver().setup();
+		options.addArguments("--disable-gpu");
+	     WebDriverManager.chromedriver().clearDriverCache().setup();
             RunnerClass.driver = new ChromeDriver(options);
             RunnerClass.driver.manage().window().maximize();
             return true;
@@ -113,9 +114,13 @@ public class PropertyWare {
             return true;
             
         } catch (Exception e) {
+
             RunnerClass.failedReason = "Building not found";
             System.out.println("Building not found");
             RunnerClass.updateStatus = 1;
+
+           // RunnerClass.failedReason = "Building not found";
+
             return false;
         }
     }
@@ -283,7 +288,8 @@ public class PropertyWare {
             boolean checkLeaseAgreementAvailable = false;
             
             for (int i = 0; i < documents.size(); i++) {
-                if (documents.get(i).getText().contains("REVISED_Lease_")) {
+                if (documents.get(i).getText().contains("REVISED_Lease_")) 
+                {
                     documents.get(i).click();
                     checkLeaseAgreementAvailable = true;
                     break;
@@ -292,7 +298,8 @@ public class PropertyWare {
             
             if (checkLeaseAgreementAvailable == false) {
                 for (int i = 0; i < documents.size(); i++) {
-                    if (documents.get(i).getText().startsWith("Lease_") && !documents.get(i).getText().contains("Lease_MOD")) {
+                    if (documents.get(i).getText().startsWith("Lease_")&&!documents.get(i).getText().contains("Lease_Mod")) 
+                    {
                         documents.get(i).click();
                         checkLeaseAgreementAvailable = true;
                         break;

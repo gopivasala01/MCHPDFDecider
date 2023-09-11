@@ -18,7 +18,11 @@ public class DataBase
 	        Statement stmt = null;
 	        ResultSet rs = null;
 	        con = DriverManager.getConnection(AppConfig.connectionUrl);
-	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PDFFormat,AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and (AutomationStatus = 'Failed' Or AutomationStatus is Null)";		   		        
+
+	       // String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PDFFormat,AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and (AutomationStatus = 'Failed' Or AutomationStatus is Null)";		   		        
+
+	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation,PDFFormat, AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and PDFFormat is Null And Note = ''";	   	
+
 	        stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	        rs = stmt.executeQuery(SQL);
 	        
