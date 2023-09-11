@@ -58,7 +58,7 @@ public class RunnerClass {
     }
 
     public static void processPendingLeases() {
-        for (int i = 0; i <20; i++) //pendingLeases.length
+        for (int i = 0; i <pendingLeases.length; i++) //pendingLeases.length
         {
             System.out.println("Lease ---- " + (i + 1));
             try {
