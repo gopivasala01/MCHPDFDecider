@@ -66,7 +66,7 @@ public class RunnerClass {
                 initializeLeaseData(i);
 
                 // Process different steps for the lease
-                if (!PropertyWare.selectBuilding() || !PropertyWare.selectLease() ||
+                if (!PropertyWare.selectBuilding() || //!PropertyWare.selectLease() ||
                     !PropertyWare.downloadLeaseAgreement(LeaseName, leaseEntityID) ||
                     !PDFReader.extractPDFData()) {
                     updateFailedRecord();

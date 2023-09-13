@@ -125,7 +125,7 @@ public class PropertyWare {
         }
     }
     
-    public static boolean selectLease() {
+   public static boolean selectLease() {
         try {
             RunnerClass.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
@@ -273,11 +273,7 @@ public class PropertyWare {
                 return false;
             }
             
-            try {
-                if (RunnerClass.driver.findElement(Locators.renewalPopup).isDisplayed()) {
-                    RunnerClass.driver.findElement(Locators.renewalPoupCloseButton).click();
-                }
-            } catch (Exception e) {}
+            intermittentPopUp ();
             
             RunnerClass.driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(15));
@@ -298,7 +294,7 @@ public class PropertyWare {
             
             if (checkLeaseAgreementAvailable == false) {
                 for (int i = 0; i < documents.size(); i++) {
-                    if (documents.get(i).getText().startsWith("Lease_")&&!documents.get(i).getText().contains("Lease_Mod")) 
+                    if (documents.get(i).getText().startsWith("Lease_")&&!documents.get(i).getText().contains("Lease_Mod")&&!documents.get(i).getText().contains("Lease_Terminated")) 
                     {
                         documents.get(i).click();
                         checkLeaseAgreementAvailable = true;
@@ -309,7 +305,7 @@ public class PropertyWare {
             
             if (checkLeaseAgreementAvailable == false) {
                 for (int i = 0; i < documents.size(); i++) {
-                    if (documents.get(i).getText().contains("Lease_") && !documents.get(i).getText().contains("Lease_MOD")) {
+                    if (documents.get(i).getText().contains("Lease_") && !documents.get(i).getText().contains("Lease_MOD")&&!documents.get(i).getText().contains("Lease_Terminated")) {
                         documents.get(i).click();
                         checkLeaseAgreementAvailable = true;
                         break;
