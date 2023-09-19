@@ -29,7 +29,7 @@ public class PDFReader {
 	            allPagesText = cleanText(allPagesText);
 
 	            // Print the extracted text from all pages
-	            System.out.println("All pages text:\n" + allPagesText);
+	           // System.out.println("All pages text:\n" + allPagesText);
 
 	            System.out.println("------------------------------------------------------------------");
 
