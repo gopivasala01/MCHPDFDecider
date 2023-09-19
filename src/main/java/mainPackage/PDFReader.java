@@ -40,7 +40,7 @@ public class PDFReader {
 	            
 	            while (matcher.find()) {
 	                String matchedDate = matcher.group();
-	                System.out.println("Found date: " + matchedDate);
+	                //System.out.println("Found date: " + matchedDate);
 	            }
 	        }
 
