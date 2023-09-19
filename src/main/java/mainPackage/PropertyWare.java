@@ -96,7 +96,7 @@ public class PropertyWare {
             Select marketDropdownList = new Select(RunnerClass.driver.findElement(Locators.marketDropdown));
             marketDropdownList.selectByVisibleText(marketName);
             Thread.sleep(3000);
-            String buildingPageURL = AppConfig.buildingPageURL + RunnerClass.buildingEntityID;
+            String buildingPageURL = AppConfig.buildingPageURL + RunnerClass.leaseEntityID;
             RunnerClass.driver.navigate().to(buildingPageURL);
             
             if (permissionDeniedPage() == true) {
@@ -125,7 +125,7 @@ public class PropertyWare {
         }
     }
     
-   public static boolean selectLease() {
+   /*public static boolean selectLease() {
         try {
             RunnerClass.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
@@ -162,7 +162,7 @@ public class PropertyWare {
         } catch (Exception e) {
             return false;
         }
-    }
+    }*/
  
     
     public static void intermittentPopUp() {
@@ -257,7 +257,7 @@ public class PropertyWare {
         } catch (Exception e) {}
         
         try {
-            RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+            /*RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
             Thread.sleep(2000);
             RunnerClass.driver.findElement(Locators.leasesTab).click();
             RunnerClass.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -271,7 +271,7 @@ public class PropertyWare {
                 RunnerClass.failedReason = "Unable to Click Lease Onwer Name";
                 RunnerClass.updateStatus = 1;
                 return false;
-            }
+            }*/
             
             intermittentPopUp ();
             
