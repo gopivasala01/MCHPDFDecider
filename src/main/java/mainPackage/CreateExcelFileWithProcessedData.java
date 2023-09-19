@@ -42,7 +42,7 @@ public class CreateExcelFileWithProcessedData {
 	        Statement stmt = null;
 	        ResultSet rs = null;
 	        con = DriverManager.getConnection(AppConfig.connectionUrl);
-	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName, PortfolioAbbreviation, AutomationStatus, PdfFormat FROM Automation.LeasePdfDecider WHERE PortfolioAbbreviation LIKE '%MCH%'";
+	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName, PortfolioAbbreviation, AutomationStatus, PdfFormat, Note FROM Automation.LeasePdfDecider WHERE PortfolioAbbreviation LIKE '%MCH%'";
 	        stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	        rs = stmt.executeQuery(SQL);
 
@@ -59,9 +59,10 @@ public class CreateExcelFileWithProcessedData {
 	            String AutomationStatus = rs.getString("AutomationStatus");
 	            String PdfFormat = rs.getString("PdfFormat");
 
+	            String Note = rs.getString("Note");
 	            // Create a new row in the Excel sheet
 	            Row row = sheet1.createRow(rowIndex);
-	            String[] rowData = {ID, leaseEntityID, buildingEntityID, Company, buildingAbbreviation, LeaseName, PdfFormat,AutomationStatus};
+	            String[] rowData = {ID, leaseEntityID, buildingEntityID, Company, buildingAbbreviation, LeaseName, PdfFormat,AutomationStatus,Note};
 	            for (int j = 0; j < rowData.length; j++) {
 	                row.createCell(j).setCellValue(rowData[j]);
 	            }

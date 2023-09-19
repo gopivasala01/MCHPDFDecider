@@ -24,8 +24,8 @@ public class PDFReader {
                 firstPageText = cleanText(firstPageText);
                 allPagesText = cleanText(allPagesText);
 
-               System.out.println("First page text:\n" + firstPageText);
-               System.out.println("All pages text:\n" + allPagesText);
+               //System.out.println("First page text:\n" + firstPageText);
+               //System.out.println("All pages text:\n" + allPagesText);
             }
 
             return true; // Return true if PDF data extraction was successful

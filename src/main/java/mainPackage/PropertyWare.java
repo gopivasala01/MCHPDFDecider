@@ -294,7 +294,10 @@ public class PropertyWare {
             
             if (checkLeaseAgreementAvailable == false) {
                 for (int i = 0; i < documents.size(); i++) {
-                    if (documents.get(i).getText().startsWith("Lease_")&&!documents.get(i).getText().contains("Lease_Mod")) 
+                    if (documents.get(i).getText().startsWith("Lease_")&& 
+    	                    !documents.get(i).getText().contains("Termination") && 
+    	                    !documents.get(i).getText().contains("_Mod") && 
+    	                    !documents.get(i).getText().contains("_MOD")) 
                     {
                         documents.get(i).click();
                         checkLeaseAgreementAvailable = true;
@@ -303,15 +306,7 @@ public class PropertyWare {
                 }
             }
             
-            if (checkLeaseAgreementAvailable == false) {
-                for (int i = 0; i < documents.size(); i++) {
-                    if (documents.get(i).getText().contains("Lease_") && !documents.get(i).getText().contains("Lease_MOD ")) {
-                        documents.get(i).click();
-                        checkLeaseAgreementAvailable = true;
-                        break;
-                    }
-                }
-            }
+            
             
             if (checkLeaseAgreementAvailable == false) {
                 for (int i = 0; i < documents.size(); i++) {
