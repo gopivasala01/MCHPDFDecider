@@ -21,7 +21,7 @@ public class DataBase
 
 	       // String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PDFFormat,AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and (AutomationStatus = 'Failed' Or AutomationStatus is Null)";		   		        
 
-	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation,PDFFormat, AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and AutomationStatus = 'Failed' And Note ='Building Not Found'";	   	
+	        String SQL = "SELECT ID, LeaseEntityID, BuildingEntityID, Company, buildingabbreviation, LeaseName,PortfolioAbbreviation,PDFFormat, AutomationStatus, Note FROM Automation.LeasePdfDecider where PortfolioAbbreviation like '%MCH%' and AutomationStatus = 'Failed'";	   	
 
 	        stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	        rs = stmt.executeQuery(SQL);
